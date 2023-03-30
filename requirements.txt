@@ -1,3 +1,0 @@
-pip freeze > requirements.txt
-git commit -m "requirements"
-git push
