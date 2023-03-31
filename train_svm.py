@@ -6,7 +6,7 @@ from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score, classification_report
 
 # Load the dataset into a pandas DataFrame
-data = pd.read_csv("./DATASET/android_traffic.csv")
+data = pd.read_csv(".android_traffic.csv")
 
 # Display some basic information about the dataset
 print("Shape:", data.shape)
