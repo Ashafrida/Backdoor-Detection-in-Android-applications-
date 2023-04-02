@@ -18,7 +18,7 @@ import numpy as np
 import seaborn as sns
 import pandas as pd
 
-df = pd.read_csv(".train.csv", sep=";")
+df = pd.read_csv("./DATASET/train.csv", sep=";")
 df = df.astype("int64")
 df.type.value_counts()
 pd.Series.sort_values(df[df.type==1].sum(axis=0), ascending=False)[1:11]
@@ -39,7 +39,7 @@ pred = gnb.predict(X_test)
 
 
 # savint the model
-with open('.gnb_model_permissions.pkl', 'wb') as file:
+with open('./Trainedmodel/gnb_model_permissions.pkl', 'wb') as file:
     pickle.dump(gnb, file)
 
 # accuracy
