@@ -16,7 +16,7 @@ def home():
     
 @schedular.scheduled_job(IntervalTrigger(hours=3))
 def permission():
-    returb permissions 
+    return permissions 
 
 
 @schedular.scheduled_job(IntervalTrigger(hours=3))
