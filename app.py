@@ -1,24 +1,26 @@
 from flask import Flask
 import pickle
+from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.schedulers.blocking import BlockingScheduler
+from apscheduler.triggers.interval import IntervalTrigger
+import time
+import os
+
+network_traffics="./TrainedModel/"
+permission="./gnb_model_permissions.pkl"
+schedular= BlockingScheduler
 
 
-class Models:
-    network_traffics="./TrainedModel/"
-    permission="./TrainedModel/gnb_model_permissions.pkl"
-
-app=Flask(__name__)
-
-
-@app.route("/")
 def home():
-    return "Welcome"
-
-@app.route("/api/get/permissions")
+    print("Welcome")
+    
+@schedular.scheduled_job(IntervalTrigger(hours=3))
 def permission():
-    return "permissions"
+    returb permissions 
 
-@app.route("/api/get/network_traffics")
+
+@schedular.scheduled_job(IntervalTrigger(hours=3))
 def traffics():
-    return "getting traffics"
-
+    return network_traffics 
+schedular.start()
 
